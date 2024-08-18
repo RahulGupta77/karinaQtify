@@ -7,6 +7,7 @@ import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import * as React from 'react';
+import Logo from "./Group1.png";
 import "./Navbar.css";
 
 const Search = styled('div')(({ theme }) => ({
@@ -52,8 +53,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" className='header'>
-        <Toolbar>
+      <AppBar sx={{ display: 'flex', justifyContent: 'space-between' }} position="static" className='header' >
+          <Toolbar >
           <IconButton
             size="large"
             edge="start"
@@ -61,23 +62,29 @@ export default function Navbar() {
             aria-label="logo"
             sx={{ mr: 2 }}
           >
-            <img src="./Group1.png" alt="Company Logo" />
+            <img src={Logo} alt="Company Logo" />
           </IconButton>
-          
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search an album of your choice."
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Button variant="contained" color="success">
-              Give Feedback
-            </Button>
+            <Button variant="contained"
+             sx={{
+              backgroundColor: 'black',
+              color: 'green',
+              '&:hover': {
+                backgroundColor: 'darkgrey', // Optional: Change color on hover
+                },
+              }}>
+  Give Feedbacks
+</Button>
           </Box>
         </Toolbar>
       </AppBar> 

@@ -1,14 +1,11 @@
 .header {
   background-color: #34C94B !important;
-  height: 100px;
+  height: 6.25em;
   width: 100vw;
-  padding: 0px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 0 2em;
 }
-img {
-  width: 20%;
-  height:30%;
+.header img {
+  width: 500%;
+  height:50%;
   /* Ensure the image is sized for visibility */
 }
