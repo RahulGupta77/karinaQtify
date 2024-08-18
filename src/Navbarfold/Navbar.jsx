@@ -53,7 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar sx={{ display: 'flex', justifyContent: 'space-between' }} position="static" className='header' >
+      <AppBar sx={{ display: 'flex', justifyContent: 'center', alignItems:'normal' }} position="static" className='header' >
           <Toolbar >
           <IconButton
             size="large"
@@ -82,6 +82,7 @@ export default function Navbar() {
               '&:hover': {
                 backgroundColor: 'darkgrey', // Optional: Change color on hover
                 },
+                 fontFamily: 'Poppins, sans-serif' 
               }}>
   Give Feedbacks
 </Button>
