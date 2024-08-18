@@ -59,6 +59,7 @@ const SearchButton = styled(Button)(({ theme }) => ({
 export default function Navbar() {
  return (
     <Container maxWidth="lg">
+      <h1>Hey!</h1>
       <AppBar sx={{ display: 'flex', justifyContent: 'center', alignItems: 'normal', flexGrow: 1 }} position="static" className='header'>
         <Toolbar>
           <a href="./" aria-label="logo">
