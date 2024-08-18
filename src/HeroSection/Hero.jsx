@@ -1,11 +1,11 @@
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Headphone from './headphone.png'; // Default import
 
 export default function Hero() {
   return (
-    <Container
+    <>
+    <Box
       disableGutters
       sx={{
         maxWidth: '100%',
@@ -40,6 +40,7 @@ export default function Hero() {
           flexShrink: 0// Prevents image from shrinking
         }}
       />
-    </Container>
+      </Box>
+    </>
   );
 }

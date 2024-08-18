@@ -2,7 +2,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Button } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,78 +16,85 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginRight: theme.spacing(2),
+  marginRight: theme.spacing(4), // Adjusted to create gap between search bar and logo
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
+  width: 'auto', // Set width to auto to fit content
+  display: 'flex', // Use flexbox to align items
+  flexGrow: 1 ,
   alignItems: 'center',
-  justifyContent: 'center',
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
+  padding: theme.spacing(2),
+  // Padding on the right to make space for the button
+  paddingRight: `calc(3em + ${theme.spacing(2)})`, // Adjusted padding to fit button
+  transition: theme.transitions.create('width'),
+ 
+  [theme.breakpoints.up('md')]: {
+    width: '20ch',
   },
+  flexGrow: 1 ,
+}));
+
+const SearchButton = styled(Button)(({ theme }) => ({
+  position: 'absolute',
+  right: 0,
+  top: 0,
+  height: '100%',
+  borderRadius: `0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px 0`,
+  padding: theme.spacing(0, 2),
+  minWidth: 'auto', // Adjust width to fit content
+  color: theme.palette.common.white,
+  backgroundColor: alpha(theme.palette.common.white, 0.0),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.8),
+  },
+  display: 'flex', // Center content inside button
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexGrow: 1 ,
 }));
 
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar sx={{ display: 'flex', justifyContent: 'center', alignItems:'normal' }} position="static" className='header' >
-          <Toolbar >
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="logo"
-            sx={{ mr: 2 }}
-          >
-            <img src={Logo} alt="Company Logo" />
-          </IconButton>
+      <AppBar sx={{ display: 'flex', justifyContent: 'center', alignItems: 'normal' }} position="static" className='header'>
+        <Toolbar>
+          <a href="./" aria-label="logo">
+            <div>
+              <img src={Logo} alt="Company Logo" />
+            </div>
+          </a>
+
           <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
+            <StyledInputBase 
               placeholder="Search an album of your choice."
               inputProps={{ 'aria-label': 'search' }}
             />
+            <SearchButton variant="contained">
+              <SearchIcon />
+            </SearchButton>
           </Search>
+
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Button variant="contained"
-             sx={{
-              backgroundColor: 'black',
-              color: 'green',
-              '&:hover': {
-                backgroundColor: 'darkgrey', // Optional: Change color on hover
+          <Box sx={{ display: { xs: 'flex' } }}>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: 'black',
+                color: 'green',
+                '&:hover': {
+                  backgroundColor: 'darkgrey', // Optional: Change color on hover
                 },
-                 fontFamily: 'Poppins, sans-serif' 
-              }}>
-  Give Feedbacks
-</Button>
+                fontFamily: 'Poppins, sans-serif',
+              }}
+            >
+              Give Feedbacks
+            </Button>
           </Box>
         </Toolbar>
-      </AppBar> 
+      </AppBar>
     </Box>
   );
 }
