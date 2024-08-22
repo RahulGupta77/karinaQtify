@@ -1,0 +1,29 @@
+.Hero {
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+ 
+}
+
+.HeroTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 48px;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.HeroTitle>h1 {
+  height: 48px;
+  font-size: 32px;
+  color: white;
+}
+
+.HeroImage {
+  height: 212px;
+  width: 212px;
+}

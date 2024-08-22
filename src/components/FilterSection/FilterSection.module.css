@@ -1,0 +1,27 @@
+.wrapper {
+  /* display: flex;
+    height: 380px;
+    flex-direction: column;
+    padding-left: 32px;
+    padding-top: 10px; */
+  border-bottom: 1px solid #34C94B;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.heading {
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  color:#FFFFFF;
+}
+
+.progressBar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.cardsWrapper {
+  margin-top: 30px;
+}
