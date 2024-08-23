@@ -7,7 +7,7 @@ const Carousel = ({ data, renderCardComponent }) => {
   return (
     <Swiper
       modules={[Navigation, A11y]}
-      spaceBetween={50}
+      spaceBetween={0}
       slidesPerView={7}
       navigation
       onSwiper={(swiper) => console.log(swiper)}
