@@ -1,7 +1,7 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { A11y, Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
+import "swiper/css/navigation";
+import { A11y, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Carousel = ({ data, renderCardComponent }) => {
   return (
@@ -11,12 +11,10 @@ const Carousel = ({ data, renderCardComponent }) => {
       slidesPerView={7}
       navigation
       onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      onSlideChange={() => console.log("slide change")}
     >
       {data.map((item, index) => (
-        <SwiperSlide key={index}>
-          {renderCardComponent(item)}
-        </SwiperSlide>
+        <SwiperSlide key={index}>{renderCardComponent(item)}</SwiperSlide>
       ))}
     </Swiper>
   );
